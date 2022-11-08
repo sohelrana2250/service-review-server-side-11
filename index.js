@@ -21,7 +21,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 async function run() {
 
     const dentalServices = client.db('dentalServices').collection('servicesDental');
-
+    const reviewCollection = client.db('dentalServices').collection('review');
     try {
 
         app.get('/', (req, res) => {
@@ -62,6 +62,82 @@ async function run() {
             // res.send(id);
 
 
+        })
+
+
+        //get review all data
+
+        app.get('/review', async (req, res) => {
+
+            // console.log(req.query.email);
+
+
+            let quary = {};
+
+            if (req.query.email) {
+                quary = { email: req.query.email }
+            }
+
+            const cursor = reviewCollection.find(quary);
+            const review = await cursor.toArray();
+
+            res.send(review);
+
+        })
+
+        //review-Api
+
+        app.post('/review', async (req, res) => {
+
+            const review = req.body;
+            // console.log(review);
+
+            const result = await reviewCollection.insertOne(review);
+            console.log(result);
+            res.send(result);
+        })
+
+        //update info
+
+        app.get('/updateReview/:id', async (req, res) => {
+
+            const id = req.params.id;
+            // console.log(id);
+            const query = { _id: ObjectId(id) }
+            const result = await reviewCollection.findOne(query);
+            res.send(result);
+        })
+
+        app.put('/updateReview/:id', async (req, res) => {
+
+            const id = req.params.id;
+            console.log(id);
+            const filter = { _id: ObjectId(id) }
+            const Review = req.body;
+            const options = { upsert: true };
+
+            const updateReview = {
+                $set: {
+                    text: Review.text,
+                    rating: Review.rating
+                }
+            }
+            const result = await reviewCollection.updateOne(filter, updateReview, options);
+            console.log(result);
+            res.send(result);
+        })
+
+
+
+        app.delete('/review/:id', async (req, res) => {
+
+            const id = req.params.id;
+            console.log(id);
+            const query = { _id: ObjectId(id) }
+            const result = await reviewCollection.deleteOne(query);
+            console.log(result);
+
+            res.send(result);
         })
 
 

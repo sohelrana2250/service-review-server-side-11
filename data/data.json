@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Dental Bonding",
+        "price": 420,
+        "ratings": 4,
+        "img": "https://newivory.ae/wp-content/uploads/2018/10/dental-bonding.jpg",
+        "discription": "Dental bonding is a technique used to correct imperfections with your teeth to give you a better-looking smile. Bonding is used to repair chipped teeth, decayed teeth, and cracked teeth. Bonding involves applying a tooth-colored resin material to the teeth and hardening it with a light. This bonds the material to the teeth to improve a person's smile."
+    },
+    {
+        "title": "Dental Crowns",
+        "price": 320,
+        "ratings": 5,
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN2ZwYLbM9LpZMnkTsRf1u7OY8LK9qD6B5-zNiqQ19gvRpyke8-A8gLnMG8bk_YXbXuTI&usqp=CAU",
+        "discription": "A dental crown is a dental prosthesis which replaces the visible part of a tooth. A dental crown functions to strengthen teeth, restore their original shape, and improve their appearance. Dental crowns are also used to hold dental bridges in place and cover dental implants."
+    },
+    {
+        "title": "Bridgework",
+        "price": 450,
+        "ratings": 4.5,
+        "img": "https://westcoastinternational.com/wp-content/uploads/2018/05/dental-bridges.jpg",
+        "discription": " A dental bridge is a structure between two dental crowns to fill the gap between missing teeth. A bridge can be supported by your teeth, implants, or a combination of teeth and implants. A dental bridge can restore your smile, improve your appearance, and take years off your look. Who doesn't want to look better- or younger?."
+    },
+    {
+        "title": "Cosmetic Fillings",
+        "price": 250,
+        "ratings": 3.5,
+        "img": "https://www.laserdentalbd.com/wp-content/uploads/2021/10/COSMETIC-DENTAL-FILLING-1.jpg",
+        "discription": " Cosmetic fillings, or tooth- colored fillings, are made of composite resin and glass particles. They are cemented onto the existing teeth using a bonding agent. Cosmetic fillings can improve the appearance of your smile. Unlike silver-colored fillings, cosmetic fillings look just like your natural teeth. "
+    },
+    {
+        "title": "Dental Veneers",
+        "price": 350,
+        "ratings": 4.5,
+        "img": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.squarespace-cdn.com%2Fcontent%2Fv1%2F592397722e69cf8a531d5c2b%2F1613598813194-2YWP0RTKI3L9GY55BKB8%2FDental%2BVeneers%2B%25281%2529.jpg%3Fformat%3D1000w&imgrefurl=https%3A%2F%2Fwww.positivelypda.com%2Fdental-veneers&tbnid=6YbLSrjhEOWLyM&vet=12ahUKEwj0rKr4wZ37AhU-z3MBHeTwDeYQMygJegUIARDUAQ..i&docid=uf9abZkrPQtGsM&w=1000&h=666&q=dental%20veneers%20jpg%20image&ved=2ahUKEwj0rKr4wZ37AhU-z3MBHeTwDeYQMygJegUIARDUAQ",
+        "discription": "Many people are discovering the benefits of veneers. Veneers are thin coverings that are placed over the front part of the teeth. Veneers are placed on teeth that are crooked, poorly shaped, or severely discolored. They may also be used to lighten teeth that are yellow or have a gray cast. "
+    },
+    {
+        "title": "Teeth Cleanings",
+        "price": 450,
+        "ratings": 5,
+        "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fpremium-photo%2Fdental-cleaning-removing-plaque-dirt-teeth-3d-3d-illustration_16592003.htm&psig=AOvVaw18zwhmwT39Zr5f1bqHaHcx&ust=1667960351244000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCMipw9TCnfsCFQAAAAAdAAAAABAF",
+        "discription": " You should visit the dentist every six months for teeth cleanings. Tartar is a hard buildup of plaque that forms on the teeth. Tartar forms below and above the gum line. The only way to remove tartar is to see a dentist for a professional teeth cleaning. Regular teeth cleanings are important to maintaining healthy teeth and gums."
+    }
+]

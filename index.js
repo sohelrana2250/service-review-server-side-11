@@ -70,6 +70,19 @@ async function run() {
 
         })
 
+        app.post('/addService', async (req, res) => {
+
+            const addservices = req.body;
+
+            // console.log(addservices);
+
+            const result = await dentalServices.insertOne(addservices);
+            //console.log(result);
+            res.send(result);
+
+
+        })
+
         app.get('/serviceDetails', async (req, res) => {
             const quary = {};
             const cursor = dentalServices.find(quary);

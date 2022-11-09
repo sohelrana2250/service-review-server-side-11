@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5008;
+const jwt = require('jsonwebtoken');
 const cors = require('cors');
 require('dotenv').config();
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
@@ -14,15 +15,42 @@ app.use(express.json());
 
 
 
-const uri = "mongodb+srv://dentalServices:Oa8veD10SWcXJI02@cluster0.wqhd5vt.mongodb.net/?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.wqhd5vt.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
+
+function varifyJWT(req, res, next) {
+
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+        return res.status(401).send({ message: 'un-authorized-access' })
+
+    }
+    const token = authHeader.split(' ')[1];
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+
+        if (err) {
+            return res.status(401).send({ message: 'un-authorized-access' })
+        }
+        req.decoded = decoded;
+        next();
+    });
+
+}
 
 async function run() {
 
     const dentalServices = client.db('dentalServices').collection('servicesDental');
     const reviewCollection = client.db('dentalServices').collection('review');
     try {
+
+        app.post('/jwt', (req, res) => {
+
+            const user = req.body;
+            //console.log(user);
+            const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
+            res.send({ token });
+        })
 
         app.get('/', (req, res) => {
 
@@ -67,10 +95,16 @@ async function run() {
 
         //get review all data
 
-        app.get('/review', async (req, res) => {
+        app.get('/review', varifyJWT, async (req, res) => {
 
             // console.log(req.query.email);
 
+
+            const decoded = req.decoded;
+            console.log('Api', decoded);
+            if (decoded.email !== req.query.email) {
+                res.status(403).send({ message: 'un-authorized-access' })
+            }
 
             let quary = {};
 

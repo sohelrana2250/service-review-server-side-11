@@ -60,6 +60,7 @@ async function run() {
         app.get('/service', async (req, res) => {
             //userName: dentalServices
             //password: Oa8veD10SWcXJI02
+            ////https://b6a11-service-review-server-side-two.vercel.app/service
 
             const quary = {};
 

@@ -55,6 +55,7 @@ async function run() {
         app.get('/', (req, res) => {
 
             res.send('service-Review-Server');
+            //https://b6a11-service-review-server-side-two.vercel.app/service
         });
 
         app.get('/service', async (req, res) => {
